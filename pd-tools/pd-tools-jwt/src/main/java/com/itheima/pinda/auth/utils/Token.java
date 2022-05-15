@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- *
+ *  Token生成
  *
  */
 @Data
-@NoArgsConstructor
+@NoArgsConstructor  // 创建无参构造
 @AllArgsConstructor
 public class Token implements Serializable {
     private static final long serialVersionUID = -8482946147572784305L;

@@ -40,9 +40,11 @@
 
     <!-- 控制台实时输出，采用高亮语法，用于开发环境 -->
     <appender name="CONSOLE_APPENDER" class="ch.qos.logback.core.ConsoleAppender">
+
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>${log.level.console}</level>
         </filter>
+
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}:[%5p] [%t:%r] [%cyan(%logger{50}).%M:%L] --> %highlight(%msg) %n
             </pattern>
@@ -230,7 +232,7 @@
             <appender-ref ref="ASYNC_THIRD_PARTY_APPENDER"/>
         </logger>
     </springProfile>
-
+    <!--开发环境日志输出-->
     <springProfile name="dev">
         <root level="${log.level.console}">
             <appender-ref ref="CONSOLE_APPENDER"/>
